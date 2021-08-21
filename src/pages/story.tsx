@@ -3,11 +3,11 @@ import renderToString from "next-mdx-remote/render-to-string";
 import { MdxRemote } from "next-mdx-remote/types";
 import hydrate from "next-mdx-remote/hydrate";
 import matter from "gray-matter";
-import { fetchPostContent } from "../../lib/posts";
+import { fetchPostContent } from "../lib/posts";
 import fs from "fs";
 import yaml from "js-yaml";
 import { parseISO } from 'date-fns';
-import PostLayout from "../../components/PostLayout";
+import PostLayout from "../components/PostLayout";
 
 import InstagramEmbed from "react-instagram-embed";
 import YouTube from "react-youtube";
@@ -30,40 +30,34 @@ const slugToPostContent = (postContents => {
   return hash;
 })(fetchPostContent());
 
-export default function Post({
+export default function Story({
   title,
-  dateString,
-  slug,
-  tags,
-  author,
-  description = "",
+  // dateString,
+  // slug,
+  // tags,
+  // author,
+  // description = "",
   source,
-}: Props) {
-  const content = hydrate(source, { components })
+}: any) {
+  console.log(source)
+  const content = hydrate(source)
   return (
-    <PostLayout
-      title={title}
-      date={parseISO(dateString)}
-      slug={slug}
-      tags={tags}
-      author={author}
-      description={description}
-    >
-      {content}
-    </PostLayout>
+    <div>{content}</div>
   )
 }
 
-export const getStaticPaths: GetStaticPaths = async () => {
-  const paths = fetchPostContent().map(it => "/posts/" + it.slug);
-  return {
-    paths,
-    fallback: false,
-  };
-};
+// export const getStaticPaths: GetStaticPaths = async () => {
+//   console.log('hiii')
+//   const paths = fetchPostContent().map(it => "/" + it.slug);
+//   return {
+//     paths,
+//     fallback: false,
+//   };
+// };
 
 export const getStaticProps: GetStaticProps = async ({ params }) => {
-  const slug = params.post as string;
+  console.log('hiii')
+  const slug = 'our-story'
   const source = fs.readFileSync(slugToPostContent[slug].fullPath, "utf8");
   const { content, data } = matter(source, {
     engines: { yaml: (s) => yaml.load(s, { schema: yaml.JSON_SCHEMA }) as object }
@@ -71,12 +65,12 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
   const mdxSource = await renderToString(content, { components, scope: data });
   return {
     props: {
-      title: data.title,
-      dateString: data.date,
-      slug: data.slug,
-      description: "",
-      tags: data.tags,
-      author: data.author,
+      title: 'story',
+      // dateString: data.date,
+      // slug: data.slug,
+      // description: "",
+      // tags: data.tags,
+      // author: data.author,
       source: mdxSource
     },
   };

@@ -3,6 +3,7 @@ import { SocialIcon } from "react-social-icons";
 
 
 export default function Index() {
+  console.log('hi')
   return (
     <div
     className="container lg:w-2/3 space-y-12 flex-col flex items-center pt-10"
