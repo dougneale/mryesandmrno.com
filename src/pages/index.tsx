@@ -1,6 +1,7 @@
 import React from "react";
 import { SocialIcon } from "react-social-icons";
 
+import homepage from "../lib/homepage";
 
 export default function Index() {
   console.log('hi')
@@ -8,20 +9,7 @@ export default function Index() {
     <div
     className="container lg:w-2/3 space-y-12 flex-col flex items-center pt-10"
   >
-    <img className="w-1/3 max-w-md" src="images/Logo.png" />
-    <div>
-      <div className="flex flex-row space-x-9 font-medium text-xl">
-        <a href="/our-story">
-          <span className=" hover:text-blue-800">Our Story</span>
-        </a>
-        <a href="/our-food">
-          <span className=" hover:text-blue-800">Our Food</span>
-        </a>
-        <a href="/contact">
-          <span className=" hover:text-blue-800">Contact Us</span>
-        </a>
-      </div>
-    </div>
+    <img className="w-1/3 max-w-md" src={homepage.home_image} />
     <div className="space-x-5">
       <SocialIcon url="https://www.facebook.com/MrYesandMrNoFacebook" />
       <SocialIcon url="https://www.instagram.com/mryesandmrno" />

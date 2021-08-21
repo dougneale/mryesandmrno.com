@@ -12,6 +12,27 @@ collections:
     editor:
       preview: false
     files:
+      - name: "homepage"
+        label: "Homepage Config"
+        file: "homepage.json"
+        description: "Homepage settings"
+        fields:
+          - label: "Homepage image"
+            name: "home_image"
+            widget: "image"
+            choose_url: true
+            media_library:
+              config:
+                multiple: true
+          - label: "Youtube Video URLS"
+            name: "youtube_video_urls"
+            widget: "list"
+            summary: "{{fields.url}}"
+            field:
+              label: URL
+              name: url
+              widget: "string"
+
       - name: "general"
         label: "Site Config"
         file: "config.json"
@@ -41,6 +62,7 @@ collections:
           - label: "GitHub account"
             name: "github_account"
             widget: "string"
+
 
   - name: "meta"
     label: "Meta"
