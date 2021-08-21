@@ -107,3 +107,10 @@ collections:
       - label: "Body"
         name: "body"
         widget: "markdown"
+      - label: "Image"
+        name: "thumbnail"
+        widget: "image"
+        choose_url: true
+        media_library:
+          config:
+            multiple: true

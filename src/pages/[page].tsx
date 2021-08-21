@@ -6,6 +6,7 @@ import matter from "gray-matter";
 import { fetchPostContent } from "../lib/posts";
 import fs from "fs";
 import yaml from "js-yaml";
+import Image from 'next/image'
 import { parseISO } from 'date-fns';
 import PostLayout from "../components/PostLayout";
 
@@ -32,32 +33,32 @@ const slugToPostContent = (postContents => {
 
 export default function Story({
   title,
-  // dateString,
-  // slug,
-  // tags,
-  // author,
-  // description = "",
+  image,
   source,
 }: any) {
-  console.log(source)
   const content = hydrate(source)
   return (
-    <div>{content}</div>
+    <div className="container lg:w-2/3 space-y-10 flex-col pb-8">
+    <h1 className="text-3xl">{title}</h1>
+    <img className="rounded-full w-1/2 m-auto" src={image} />
+    <div className="prose space-y-8 mx-auto">
+    {content}
+  </div>
+  </div>
   )
 }
 
-// export const getStaticPaths: GetStaticPaths = async () => {
-//   console.log('hiii')
-//   const paths = fetchPostContent().map(it => "/" + it.slug);
-//   return {
-//     paths,
-//     fallback: false,
-//   };
-// };
+export const getStaticPaths: GetStaticPaths = async () => {
+  const paths = fetchPostContent().map(it => "/" + it.slug);
+  return {
+    paths,
+    fallback: false,
+  };
+};
 
 export const getStaticProps: GetStaticProps = async ({ params }) => {
-  console.log('hiii')
-  const slug = 'our-story'
+  console.log(params)
+  const slug = params.page as string;
   const source = fs.readFileSync(slugToPostContent[slug].fullPath, "utf8");
   const { content, data } = matter(source, {
     engines: { yaml: (s) => yaml.load(s, { schema: yaml.JSON_SCHEMA }) as object }
@@ -65,12 +66,13 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
   const mdxSource = await renderToString(content, { components, scope: data });
   return {
     props: {
-      title: 'story',
+      title: data.title,
       // dateString: data.date,
       // slug: data.slug,
       // description: "",
       // tags: data.tags,
       // author: data.author,
+      image: data.thumbnail,
       source: mdxSource
     },
   };

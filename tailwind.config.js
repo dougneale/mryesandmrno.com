@@ -9,6 +9,13 @@ module.exports = {
       xl: "1280px",
       "2xl": "1536px",
     },
+    listStyleType: {
+      none: 'none',
+      disc: 'disc',
+      decimal: 'decimal',
+      square: 'square',
+      roman: 'upper-roman',
+      },
     container: {
       padding: {
         DEFAULT: "2rem",
@@ -24,5 +31,8 @@ module.exports = {
   variants: {
     extend: {},
   },
-  plugins: [],
+  plugins: [
+    require('@tailwindcss/typography'),
+    // ...
+  ],
 };
