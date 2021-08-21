@@ -1,3 +1,7 @@
 {
-  "home_image": "/images/logo.png"
+  "home_image": "/images/logo.png",
+  "youtube_video_urls": [
+    "https://www.youtube.com/embed/aTNCly7Ylo4",
+    "https://www.youtube.com/embed/52jaLNehOu4"
+  ]
 }
