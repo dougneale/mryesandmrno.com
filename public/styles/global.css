@@ -14,10 +14,6 @@ body {
   height: 100%;
 }
 
-ul {
-  @apply list-disc
-}
-
 #__next {
   height: 100%;
 }
