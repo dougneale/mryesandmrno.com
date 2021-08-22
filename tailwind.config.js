@@ -26,7 +26,24 @@ module.exports = {
       },
       center: true,
     },
-    extend: {},
+    extend: {
+      typography: {
+        DEFAULT: {
+          css: {
+            h1: {
+              fontWeight: '200',
+            },
+            h2: {
+              fontWeight: '200',
+            },
+            h3: {
+              fontWeight: '200',
+            },
+            // ...
+          },
+        },
+      },
+    },
   },
   variants: {
     extend: {},

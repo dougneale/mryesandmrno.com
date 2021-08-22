@@ -9,7 +9,6 @@ export type MenuItemContent = {
   readonly date: string;
   readonly title: string;
   readonly slug: string;
-  readonly tags?: string[];
   readonly fullPath: string;
   readonly thumbnail: string;
   readonly description: string;

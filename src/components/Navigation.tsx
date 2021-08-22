@@ -15,12 +15,3 @@ export default function Navigation() {
     </nav>
   )
 }
-
-export async function getStaticProps() {
-  console.log(links)
-  return {
-    props: {
-      links,
-    },
-  }
-}
