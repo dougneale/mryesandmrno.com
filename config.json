@@ -25,16 +25,16 @@
       "url": "/"
     },
     {
+      "name": "Recipes",
+      "url": "/our-recipes"
+    },
+    {
       "name": "Story",
       "url": "/our-story"
     },
     {
       "name": "Food",
       "url": "/our-food"
-    },
-    {
-      "name": "Recipes",
-      "url": "/our-recipes"
     },
     {
       "name": "Contact",
