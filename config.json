@@ -25,19 +25,19 @@
       "url": "/"
     },
     {
-      "name": "Our Story",
+      "name": "Story",
       "url": "/our-story"
     },
     {
-      "name": "Our Food",
+      "name": "Food",
       "url": "/our-food"
     },
     {
-      "name": "Our Recipes",
+      "name": "Recipes",
       "url": "/our-recipes"
     },
     {
-      "name": "Contact Us",
+      "name": "Contact",
       "url": "/contact"
     }
   ]
