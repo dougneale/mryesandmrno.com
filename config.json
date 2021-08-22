@@ -18,5 +18,27 @@
   ],
   "posts_per_page": 5,
   "twitter_account": "@dougneale",
-  "github_account": "github.com/dougneale"
+  "github_account": "github.com/dougneale",
+  "navigation_links": [
+    {
+      "name": "Home",
+      "url": "/"
+    },
+    {
+      "name": "Our Story",
+      "url": "/our-story"
+    },
+    {
+      "name": "Our Food",
+      "url": "/our-food"
+    },
+    {
+      "name": "Our Recipes",
+      "url": "/our-recipes"
+    },
+    {
+      "name": "Contact Us",
+      "url": "/contact"
+    }
+  ]
 }
