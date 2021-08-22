@@ -25,8 +25,8 @@
       "url": "/"
     },
     {
-      "name": "Recipes",
-      "url": "/our-recipes"
+      "name": "Show Recipes",
+      "url": "/show-recipes"
     },
     {
       "name": "Story",
