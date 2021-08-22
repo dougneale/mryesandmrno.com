@@ -6,5 +6,9 @@ type Props = {
   menuItems: MenuItemContent[];
 };
 export default function MenuList({ menuItems }: Props) {
-  return menuItems.map((it) => (<MenuItem menuItem={it} />))
+  return (
+    <>
+      {menuItems.map((it) => (<MenuItem menuItem={it} />))}
+    </>
+  )
 }

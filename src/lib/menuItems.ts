@@ -41,6 +41,8 @@ export function fetchMenuItemContent(): MenuItemContent[] {
         tags: string[];
         slug: string;
         fullPath: string,
+        description: string,
+        thumbnail: string
       };
       matterData.fullPath = fullPath;
 
