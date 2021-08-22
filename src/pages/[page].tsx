@@ -6,9 +6,6 @@ import matter from "gray-matter";
 import { fetchPostContent } from "../lib/posts";
 import fs from "fs";
 import yaml from "js-yaml";
-import Image from 'next/image'
-import { parseISO } from 'date-fns';
-import PostLayout from "../components/PostLayout";
 
 import InstagramEmbed from "react-instagram-embed";
 import YouTube from "react-youtube";

@@ -33,6 +33,7 @@ collections:
               name: url
               widget: "string"
 
+
       - name: "general"
         label: "Site Config"
         file: "config.json"
@@ -62,6 +63,17 @@ collections:
           - label: "GitHub account"
             name: "github_account"
             widget: "string"
+          - label: "Navigation Links"
+            name: "navigation_links"
+            widget: "list"
+            summary: "{{fields.name}} {{fields.url}}"
+            fields:
+              - label: Name
+                name: name
+                widget: "string"
+              - label: URL
+                name: url
+                widget: "string"
 
 
   - name: "meta"
@@ -136,3 +148,32 @@ collections:
         media_library:
           config:
             multiple: true
+
+
+  - name: "menuItems"
+    label: "Menu Items"
+    folder: "content/menuItems/"
+    extension: "mdx"
+    format: "frontmatter"
+    create: true
+    slug: "{{slug}}"
+    identifier_field: slug
+    summary: "{{title}}"
+    fields:
+      - label: "Slug"
+        name: "slug"
+        widget: "string"
+      - label: "Title"
+        name: "title"
+        widget: "string"
+      - label: "Description"
+        name: "description"
+        widget: "string"
+      - label: "Image"
+        name: "thumbnail"
+        widget: "image"
+        choose_url: true
+        media_library:
+          config:
+            multiple: true
+

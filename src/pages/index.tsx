@@ -4,7 +4,6 @@ import { SocialIcon } from "react-social-icons";
 import homepage from "../lib/homepage";
 
 export default function Index({videoUrls} : any) {
-  console.log('hi')
   return (
     <div
     className="container lg:w-2/3 space-y-12 flex-col flex items-center pt-10"
