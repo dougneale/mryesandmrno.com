@@ -1,22 +1,5 @@
 import config from "../lib/config"
 
-// export default function Navigation() {
-//   const links = config.navigation_links
-
-//   return (
-//     <nav className="w-100 p-3 mb-4 space-x-4">
-//       {links.map(link => (
-//         <a href={link.url}>
-//         <span className="m-0 hover:bg-gray-100 p-2 text-md text-black rounded inline-block">
-//           {link.name}
-//         </span>
-//       </a>
-//       ))}
-//     </nav>
-//   )
-// }
-
-/* This example requires Tailwind CSS v2.0+ */
 import { Disclosure } from '@headlessui/react'
 import {  MenuIcon, XIcon } from '@heroicons/react/outline'
 
@@ -29,8 +12,7 @@ export default function Navigation() {
         <>
           <div className="px-4 ">
             <div className="relative flex items-center justify-between h-16">
-              <div className="absolute inset-y-0 left-0 flex items-center sm:hidden">
-                {/* Mobile menu button*/}
+              <div className="absolute inset-y-0 left-0 hidden items-center sm:hidden">
                 <Disclosure.Button className="inline-flex items-center justify-center rounded-md hover:black focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white">
                   <span className="sr-only">Open main menu</span>
                   {open ? (
@@ -40,8 +22,8 @@ export default function Navigation() {
                   )}
                 </Disclosure.Button>
               </div>
-                <div className="hidden sm:block font-regular">
-                  <div className="flex space-x-4">
+                <div className="block font-regular">
+                  <div className="flex space-x-3">
                   {links.map(link => (
                     <a href={link.url}>
                       <span className="m-0 p-2 text-md text-black hover:bg-gray-100 rounded inline-block">
