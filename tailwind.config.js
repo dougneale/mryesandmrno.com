@@ -2,6 +2,7 @@ module.exports = {
   purge: [],
   darkMode: false, // or 'media' or 'class'
   theme: {
+    fontFamily: 'Ubuntu',
     screens: {
       sm: "640px",
       md: "768px",

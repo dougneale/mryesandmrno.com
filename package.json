@@ -10,6 +10,8 @@
     "test": "jest"
   },
   "dependencies": {
+    "@headlessui/react": "^1.4.0",
+    "@heroicons/react": "^1.0.4",
     "@mapbox/rehype-prism": "^0.6.0",
     "@svgr/webpack": "^5.5.0",
     "@tailwindcss/typography": "^0.4.1",
