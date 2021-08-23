@@ -2,20 +2,7 @@
   "base_url": "https://wutali-nextjs-netlify-blog.netlify.app",
   "site_title": "Mr Yes and Mr No",
   "site_description": "Mr Yes and Mr No's website",
-  "site_keywords": [
-    {
-      "keyword": "Next.js"
-    },
-    {
-      "keyword": "Netlify"
-    },
-    {
-      "keyword": "React"
-    },
-    "wings",
-    "sides",
-    "melbourne"
-  ],
+  "site_keywords": [],
   "posts_per_page": 5,
   "twitter_account": "@dougneale",
   "github_account": "github.com/dougneale",
@@ -35,10 +22,6 @@
     {
       "name": "Contact",
       "url": "/contact"
-    },
-    {
-      "name": "Truck",
-      "url": "/truck"
     }
   ]
 }
