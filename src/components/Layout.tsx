@@ -16,6 +16,7 @@ export default function Layout({ children }: Props) {
         <link rel="manifest" href="/site.webmanifest" />
         <link rel="apple-touch-icon" href="/icon.png" />
         <meta name="theme-color" content="#fff" />
+        <title>Mr Yes and Mr No - Next Generation Food</title>
       </Head>
       <Navigation />
       <main>{children}</main>
