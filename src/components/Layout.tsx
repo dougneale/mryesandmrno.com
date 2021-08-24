@@ -17,6 +17,7 @@ export default function Layout({ children }: Props) {
         <link rel="apple-touch-icon" href="/icon.png" />
         <meta name="theme-color" content="#fff" />
         <meta name="google-site-verification" content="hubFm75NNgR-gWDW2ov-ajMyInxd0Ueike0zduYFLGQ" />
+        <meta name="description" content="Modern Melbourne Fusion food that's affordable, unpretentious, and delicious" />
         <title>Mr Yes and Mr No - Next Generation Food</title>
       </Head>
       <Navigation />
