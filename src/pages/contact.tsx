@@ -11,12 +11,12 @@ function ContactForm() {
     },
     {
       label: "Your Email",
-      name: "name",
+      name: "email",
       type: "email",
     },
     {
       label: "Your Phone Number",
-      name: "name",
+      name: "phone",
       type: "tel",
     },
     {
