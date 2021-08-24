@@ -3,6 +3,8 @@ import matter from "gray-matter";
 import path from "path";
 import yaml from "js-yaml";
 
+import renderToString from "next-mdx-remote/render-to-string";
+
 const postsDirectory = path.join(process.cwd(), "content/pages");
 
 export type PostContent = {
@@ -39,7 +41,7 @@ export function fetchPostContent(): PostContent[] {
         title: string;
         tags: string[];
         slug: string;
-        fullPath: string,
+        fullPath: string;
       };
       matterData.fullPath = fullPath;
 
@@ -79,4 +81,24 @@ export function listPostContent(
   return fetchPostContent()
     .filter((it) => !tag || (it.tags && it.tags.includes(tag)))
     .slice((page - 1) * limit, page * limit);
+}
+
+const slugToPostContent = ((postContents) => {
+  let hash = {};
+  postContents.forEach((it) => (hash[it.slug] = it));
+  return hash;
+})(fetchPostContent());
+
+export async function getSourceAndDataBySlug(slug: string) {
+  const fileSource = fs.readFileSync(slugToPostContent[slug].fullPath, "utf8");
+  const { content, data } = matter(fileSource, {
+    engines: {
+      yaml: (s) => yaml.load(s, { schema: yaml.JSON_SCHEMA }) as object,
+    },
+  });
+  const source = await renderToString(content, { scope: data });
+  return {
+    source,
+    data,
+  };
 }
