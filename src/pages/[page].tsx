@@ -37,7 +37,7 @@ export default function Story({ title, image, video_link, source }: any) {
         </div>
       )}
       {image && <img className="rounded-full w-1/2 m-auto" src={image} />}
-      <div className="prose space-y-8 mx-auto">{content}</div>
+      <div className="prose space-y-8">{content}</div>
     </div>
   );
 }
