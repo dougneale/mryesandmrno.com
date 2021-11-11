@@ -8,8 +8,8 @@ type Props = {
 export default function Index({ menuItems }: Props) {
   return (
     <div className="container lg:w-2/3 flex-col divide-y-2">
-      <div className="pb-6">
-        <h1 className="text-3xl pb-3">Our Food</h1>
+      <div className="pb-6 space-y-4">
+        <h1 className="text-3xl pb-3 ">Our Food</h1>
         <p>
           We make Melbourne fusion food that celebrates the tastes and diversity
           of our city. In practice this means we harness flavours from around
