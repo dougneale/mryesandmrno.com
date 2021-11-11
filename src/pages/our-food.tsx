@@ -10,7 +10,16 @@ export default function Index({ menuItems }: Props) {
     <div className="container lg:w-2/3 flex-col divide-y-2">
       <div className="pb-6">
         <h1 className="text-3xl pb-3">Our Food</h1>
-        <p>See our range of different cuisines!</p>
+        <p>
+          We make Melbourne fusion food that celebrates the tastes and diversity
+          of our city. In practice this means we harness flavours from around
+          the world that like us, have found a home in Melbourne.
+        </p>
+        <p>
+          We are proud of our dynamic menu which can be adjusted according your
+          requirements.
+        </p>
+        <p>Here are a selection of our most popular dishes.</p>
       </div>
       <MenuList menuItems={menuItems} />
     </div>
