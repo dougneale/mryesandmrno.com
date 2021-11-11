@@ -12,12 +12,12 @@
       "url": "/"
     },
     {
-      "name": "Our Show",
-      "url": "/show-recipes"
+      "name": "Our Food",
+      "url": "/our-food"
     },
     {
-      "name": "Food",
-      "url": "/our-food"
+      "name": "Our Show",
+      "url": "/show-recipes"
     },
     {
       "name": "Contact",
