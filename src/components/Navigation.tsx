@@ -1,44 +1,38 @@
-import config from "../lib/config"
+import config from "../lib/config";
 
-import { Disclosure } from '@headlessui/react'
-import {  MenuIcon, XIcon } from '@heroicons/react/outline'
-
+import { Disclosure } from "@headlessui/react";
+import { MenuIcon, XIcon } from "@heroicons/react/outline";
 
 export default function Navigation() {
-  const links = config.navigation_links
+  const links = config.navigation_links;
   return (
-    <Disclosure className="pb-6" as="nav">
+    <Disclosure className="" as="nav">
       {({ open }) => (
         <>
-          <div className="px-4 ">
-            <div className="relative flex items-center justify-between h-16">
-              <div className="absolute inset-y-0 left-0 hidden items-center sm:hidden">
-                <Disclosure.Button className="inline-flex items-center justify-center rounded-md hover:black focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white">
-                  <span className="sr-only">Open main menu</span>
-                  {open ? (
-                    <XIcon className="block h-6 w-6" aria-hidden="true" />
-                  ) : (
-                    <MenuIcon className="block h-6 w-6" aria-hidden="true" />
-                  )}
-                </Disclosure.Button>
-              </div>
-                <div className="block font-regular">
-                  <div className="flex space-x-3">
-                  {links.map(link => (
-                    <a href={link.url}>
-                      <span className="m-0 p-2 text-md text-black hover:bg-gray-100 rounded inline-block">
-                        {link.name}
-                      </span>
-                    </a>
-                    ))}
-                  </div>
-                </div>
-             
+          <div className="absolute bg-white border-black border-4 items-center sm:hidden rounded-full top-4 left-4">
+            <Disclosure.Button className="space-x-3 inline-flex items-center justify-center rounded-md hover:black focus:outline-none py-2 px-3">
+              {open ? (
+                <XIcon className="block h-6 w-6" aria-hidden="true" />
+              ) : (
+                <MenuIcon className="block h-6 w-6" aria-hidden="true" />
+              )}
+              <span className="font-bold">Menu</span>
+            </Disclosure.Button>
+          </div>
+          <div className="flexitems-center justify-between hidden sm:block font-semibold py-3 px-4">
+            <div className="flex space-x-3 items-center">
+              {links.map((link) => (
+                <a href={link.url}>
+                  <span className="m-0 p-2 text-md  hover:bg-gray-100 rounded inline-block">
+                    {link.name}
+                  </span>
+                </a>
+              ))}
             </div>
           </div>
 
           <Disclosure.Panel className="sm:hidden">
-            <div className="px-2 pb-3 space-y-1">
+            <div className="px-2 pb-3 space-y-1 mt-20 font-bold">
               {links.map((link) => (
                 <a
                   key={link.name}
@@ -53,5 +47,5 @@ export default function Navigation() {
         </>
       )}
     </Disclosure>
-  )
+  );
 }
