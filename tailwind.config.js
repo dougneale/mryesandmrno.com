@@ -2,7 +2,7 @@ module.exports = {
   purge: [],
   darkMode: false, // or 'media' or 'class'
   theme: {
-    fontFamily: 'Ubuntu',
+    fontFamily: "Ubuntu",
     screens: {
       sm: "640px",
       md: "768px",
@@ -11,12 +11,12 @@ module.exports = {
       "2xl": "1536px",
     },
     listStyleType: {
-      none: 'none',
-      disc: 'disc',
-      decimal: 'decimal',
-      square: 'square',
-      roman: 'upper-roman',
-      },
+      none: "none",
+      disc: "disc",
+      decimal: "decimal",
+      square: "square",
+      roman: "upper-roman",
+    },
     container: {
       padding: {
         DEFAULT: "2rem",
@@ -28,17 +28,23 @@ module.exports = {
       center: true,
     },
     extend: {
+      spacing: {
+        home: "520px",
+      },
+      backgroundImage: {
+        truck: "url('/images/truck.png')",
+      },
       typography: {
         DEFAULT: {
           css: {
             h1: {
-              fontWeight: '200',
+              fontWeight: "200",
             },
             h2: {
-              fontWeight: '200',
+              fontWeight: "200",
             },
             h3: {
-              fontWeight: '200',
+              fontWeight: "200",
             },
             // ...
           },
@@ -50,7 +56,7 @@ module.exports = {
     extend: {},
   },
   plugins: [
-    require('@tailwindcss/typography'),
+    require("@tailwindcss/typography"),
     // ...
   ],
 };

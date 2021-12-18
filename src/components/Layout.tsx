@@ -16,12 +16,18 @@ export default function Layout({ children }: Props) {
         <link rel="manifest" href="/site.webmanifest" />
         <link rel="apple-touch-icon" href="/icon.png" />
         <meta name="theme-color" content="#fff" />
-        <meta name="google-site-verification" content="hubFm75NNgR-gWDW2ov-ajMyInxd0Ueike0zduYFLGQ" />
-        <meta name="description" content="Modern Melbourne Fusion food that's affordable, unpretentious, and delicious" />
+        <meta
+          name="google-site-verification"
+          content="hubFm75NNgR-gWDW2ov-ajMyInxd0Ueike0zduYFLGQ"
+        />
+        <meta
+          name="description"
+          content="Modern Melbourne Fusion food that's affordable, unpretentious, and delicious"
+        />
         <title>Mr Yes and Mr No - Next Generation Food</title>
       </Head>
       <Navigation />
-      <main>{children}</main>
+      <main className="h-full">{children}</main>
       <footer className="container pt-10 pb-7 flex flex-col space-y-6 justify-center items-center">
         <div className="space-x-5">
           <SocialIcon url="https://www.facebook.com/MrYesandMrNo" />
@@ -29,7 +35,7 @@ export default function Layout({ children }: Props) {
           <SocialIcon url="mailto:mryesandmrno@gmail.com" />
         </div>
         <Copyright />
-        </footer>
+      </footer>
     </div>
   );
 }
